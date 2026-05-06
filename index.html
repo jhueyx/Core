@@ -1,886 +1,383 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jason Huey | Risk Strategist : Architect</title>
+  <meta name="description" content="Jason Huey — Risk Strategist : Architect. Designing operational systems, analytical workflows, and modern risk infrastructure." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Jason Huey | Risk Strategist : Architect" />
+  <meta property="og:description" content="Designing operational systems, analytical workflows, and modern risk infrastructure." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      --bg: #090a0d;
+      --panel: rgba(255, 255, 255, 0.045);
+      --panel-strong: rgba(255, 255, 255, 0.075);
+      --text: #f5f7fb;
+      --muted: #9aa3b2;
+      --soft: #6f7888;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #8ab4ff;
+      --accent-soft: rgba(138, 180, 255, 0.14);
+      --max: 1080px;
+    }
 
-    <!-- Mobile Specific Metas
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio1.0">
-    <meta name="author" content="Jason Huey">
-    <!-- Page title
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	  <title>Jason Huey's Portfolio</title>
+    * { box-sizing: border-box; }
 
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    html { scroll-behavior: smooth; }
 
-    <!-- CSS
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- Icons
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link rel="stylesheet" href="assets/icons/Linea/styles.css" />
-    <link rel="stylesheet" href="assets/icons/Elegant/style.css" />
-    
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(138, 180, 255, 0.13), transparent 34rem),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06), transparent 30rem),
+        linear-gradient(180deg, #0d0f14 0%, var(--bg) 45%, #050608 100%);
+      overflow-x: hidden;
+    }
 
-    <script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
-  </head>
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
 
-<!-- Body Start
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      padding: 28px 0;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(18px);
+      background: rgba(9, 10, 13, 0.68);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      z-index: 3;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .mark-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 28px var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    main { padding: 88px 0 48px; }
+
+    .hero {
+      min-height: 62vh;
+      display: grid;
+      align-items: center;
+      padding: 18px 0 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      border: 1px solid rgba(138, 180, 255, 0.24);
+      background: var(--accent-soft);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      width: fit-content;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(54px, 11vw, 132px);
+      line-height: 0.92;
+      letter-spacing: -0.075em;
+      max-width: 940px;
+    }
+
+    .role {
+      margin-top: 24px;
+      font-size: clamp(25px, 4vw, 48px);
+      letter-spacing: -0.05em;
+      color: #dfe6f3;
+      font-weight: 520;
+    }
+
+    .summary {
+      margin-top: 30px;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.55;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.05);
+      padding: 12px 16px;
+      border-radius: 14px;
+      color: var(--text);
+      font-size: 14px;
+      transition: 160ms ease;
+    }
+
+    .btn.primary {
+      background: var(--text);
+      color: #08090c;
+      border-color: var(--text);
+    }
+
+    .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.32); }
+
+    section {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.6fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 15px;
+      color: var(--soft);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 650;
+    }
+
+    .copy {
+      margin: 0;
+      color: #c7cfdb;
+      font-size: 19px;
+      line-height: 1.7;
+      max-width: 780px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      min-height: 132px;
+      padding: 22px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--panel-strong), var(--panel));
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.025em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 15px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 22px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .item:last-child { border-bottom: 0; }
+
+    .year { color: var(--soft); font-size: 14px; }
+    .item strong { display: block; font-size: 18px; margin-bottom: 6px; }
+    .item span { color: var(--muted); line-height: 1.55; }
+
+    footer {
+      padding: 48px 0 56px;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+
+    @media (max-width: 760px) {
+      header { position: static; }
+      main { padding-top: 54px; }
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding-bottom: 68px; }
+      .section-grid { grid-template-columns: 1fr; gap: 22px; }
+      .cards { grid-template-columns: 1fr; }
+      .item { grid-template-columns: 1fr; gap: 8px; }
+      .footer-row { flex-direction: column; }
+    }
+  </style>
+</head>
 <body>
-<!-- Loader
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div id="loader">
-    <div id="loaderInner"></div>
-  </div>
-
-<!-- Header Bar
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <header id="headerBar">
-
-        <div class="container">
-
-          <!--Header logo on the left side-->
-
-          <div class="col-md-4 col-sm-2 col-xs-4 headerLeft">
-          <a href="index.html">
-<!--           <img src="assets/images/site-logo.png" alt="">
- -->          </a>
-          </div>
-
-          <!--Header right side with left-aligned menu-->
-
-          <div class="col-md-8 col-sm-10 col-xs-8 headerRight">
-            <div class="header-right">
-
-              <!--Navigation-->
-              <nav class="navigation">
-
-                <div class="navbar-header">
-                  <span class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <i class="fa fa-bars"></i>
-                  </span>
-                </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                    <ul class="navbar navbar-right">
-                      <li><a href="#sectionIntro" class="easing">Home</a></li>
-                      <li><a href="#sectionAbout" class="easing">About</a></li>
-                      <li><a href="#sectionResume" class="easing">Resume</a></li>
-                      <li><a href="#sectionPortfolio" class="easing">Portfolio</a></li>
-<!--                       <li><a href="#sectionServices" class="easing">Services</a></li>
- --><!--                       <li><a href="#sectionBlog" class="easing">Journal</a></li>
- -->                      <li><a href="#sectionContact" class="easing">Contact</a></li>
-                    </ul>
-
-                </div>
-
-              </nav>
-              <!--END Navigation-->
-
-            </div>
-          </div>
-           <!--END Header right side-->
-
-
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary navigation">
+        <a class="mark" href="#top" aria-label="Jason Huey home">
+          <span class="mark-dot" aria-hidden="true"></span>
+          <span>JH</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
         </div>
-        <!--END container-->
-      </header>
-      <!--END Header bar-->
+      </nav>
+    </div>
+  </header>
 
-
-
-<!-- section Intro
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	
-      <section id="sectionIntro" class="parallax">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="container">
-
-            <div class="textIntro col-md-6">
-              <div class="hi">
-              <h1>Jason Huey</h1>
-              <h4>Risk Management & Data Analytics</h4>
-              <p>
-              Risk management professional specializing with data and product
-              </p>
-              </div>
-
-            </div>
-
-          </div>
-
-
+  <main id="top" class="wrap">
+    <section class="hero" aria-label="Introduction">
+      <div>
+        <div class="eyebrow">Risk • Analytics • Systems</div>
+        <h1>Jason Huey</h1>
+        <div class="role">Risk Strategist : Architect</div>
+        <p class="summary">Designing operational systems, analytical workflows, and modern risk infrastructure.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://www.linkedin.com/in/jhueyx/" rel="me noopener" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/jhueyx" rel="me noopener" target="_blank">GitHub</a>
+          <a class="btn" href="mailto:hello@jhuey.com">Contact</a>
         </div>
-      </section> 
-
-<!-- section About
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		  
-      <section id="sectionAbout">
-        
-          <div class="sectionTitle">
-              <h1>About me</h1> 
-              <h6>Let me introduce myself</h6>  
-          </div>
-
-          <div class="about">      
-          <div class="container">
-
-            <div class="col-md-12 col-sm-12 col-xs-12 story">
-            <div class="profileText">
-
-            <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="storyText">
-            <h4>Profile</h4>
-            <h6>Complete name:</h6>
-            <p>Jason Huey</p>
-          <!--   <h6>Phone number:</h6>
-            <p> (415)-418-9774</p> -->
-            <h6><i class="fa fa fa-github-alt"></i> GitHub:</h6>
-            <p><a href="https://github.com/jhueyx">https://github.com/jhueyx</a></p>
-            <h6>E-mail:</h6>
-            <p>hello@jhuey.com</p>
-            </div>
-             <div class="col-md-9 col-sm-6 col-xs-3 fIcons">
-                <a href="https://www.linkedin.com/in/jhueyx/">
-                <span aria-hidden="true" class="social_linkedin_circle"></span>
-                </a>
-                <a href="https://twitter.com/jhueyx?lang=en">
-                <span aria-hidden="true" class="social_twitter_circle"></span>
-                </a>
-                <a href="https://codepen.io/jhueyx/">
-                <span aria-hidden="true" class="fa fa fa-codepen"></span>
-                </a>
-                <a href="assets/JasonHueyResume.pdf">
-                <span aria-hidden="true" class="fa fa fa-file-pdf-o""></span>
-                </a>
-
-
-            </div>
-          </div>
-
-         <div class="col-md-4 col-sm-3 col-xs-12">
-            <img class="aligncenter" src="assets/images/person.jpg" alt="Jason">
-            </div>
-
-
-
-            <div class="col-md-4 col-sm-5 col-xs-12">
-            <div class="storyText">
-            <h4>Skills</h4>
-            <h6>Web Development</h6>
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            60%
-            </div>
-            </div>
-
-            <h6>Excel</h6>
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-            95%
-            </div>
-            </div>
-
-
-             <h6>SQL</h6>
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-            95%
-            </div>
-            </div>
-
-            <h6>Python</h6>
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%;">
-            55%
-            </div>
-            </div>
-
-            <h6>Data Analytics</h6>
-            <div class="progress">
-            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-            100%
-            </div>
-            </div>
-
-            </div>
-            </div>
-
-            </div>
-            </div>
-
-<!--             <div class="container">
-            <div class="col-md-12 col-sm-12 col-xs-12 quote">
-            <h4>Quote</h4>
-            <p>The life of a designer is a life of fight. Fight against the ugliness. Just like a doctor fights against disease. For us, the visual disease is what we have around, and what we try to do is cure it somehow with design.</p>
-            <h5>Massimo Vignelli</h5>
-            </div>
-            </div> -->
-
-
-         
-          </div>
-    
-        
-      </section>
-
-      
-
-
-		
-<!-- section Resume
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		
-    <section id="sectionResume">
-        
-      <!-- section TITLE -->
-      <div class="sectionTitle">
-            <h1>Resume</h1>
-            <h6 class="whiteTitle">Past Experiences</h6>
       </div>
-
-         <div class="container">        
-            <div class="row resumeRow">
-
-                <div class="col-md-6 resumeEd">
-
-                    <ul class="resumeList">
-                        <li class="resTitle"><h4>Education</h4></li>
-                        <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-book"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Front-End Web Development</h5>
-                                <span>May 2018- September 2018</span>
-                                <p class="plineheight">
-                                Codify Academy</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-book"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Bachelor's of Science</h5>
-                                <span> August 2006- May 2010</span>
-                                <p class="plineheight">
-                                San Francisco State University, Concentration in  Corporate Finance & Financial Services</p>
-                            </div>
-                        </li>
-                    </ul>
-
-
-                </div>
-
-
-                <div class="col-md-6 resumeEmp">
-
-                    <ul class="resumeList">
-                        <li class="resTitle"><h4>Employment</h4></li>
-
-                           <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-case"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Risk Strategy </h5>
-                                <span> 2020- Present</span>
-                                <p class="plineheight">
-                                Marqeta</p>
-                            </div>
-                        </li>
-
-
-     <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-case"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Risk Strategy Analytics</h5>
-                                <span> 2019- 2020</span>
-                                <p class="plineheight">
-                                Uber Technologies </p>
-                            </div>
-                        </li>
-
-
-                          <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-case"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Payment Fraud Strategy</h5>
-                                <span> 2018- 2019</span>
-                                <p class="plineheight">
-                                Pinterest</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-case"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Risk Strategy & Legal Operations</h5>
-                                <span> 2014- 2018</span>
-                                <p class="plineheight">
-                                Postmates Inc.</p>
-                            </div>
-                        </li>
-       
-                        <li>
-                            <div class="resumeIcon">
-                                <div class="icon icon-basic-case"></div>
-                            </div>
-                            <div class="resumeContent">
-                                <h5>Private Client Banking </h5>
-                                <span> 2004-  2014</span>
-                                <p class="plineheight">
-                                JPMorgan Chase Bank, N.A.</p>
-                            </div>
-                        </li>
-                          
-                    </ul>
-
-                </div>
-
-
-
-            </div>
-           
-
-        </div>
     </section>
 
-
-<!-- section Portfolio
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <section id="sectionPortfolio">
-           
-          <div class="sectionTitle">
-            <h1>Portfolio</h1>
-            <h6>My latest works</h6>
-          </div>        
-
-        <!--GRID ITEMS-->
-
-     <!--GRID START-->
-<!--
-    <div class="container">
-    <div id="masonry-grid" class="mGrid">
-
-        <div class="gutter-sizer"></div>
-
-            
-            <div class="grid-item item-five item-padding">
-
-              <a class="image-modal" href="#image-modal1">
-
-                <img src="assets/images/1.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>Vue.js</h6>
-                    <h4>To Do List</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal1" class="mfp-hide modal-box">
-                  <img src="assets/images/1.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>To Do List</h2>
-                    <p> with use of HTML, CSS, and Vue.js </p>
-                    <a href="assets/VueToDo/index.html" target="_blank" class="btn btn-danger">View site</a></a>
-                  </div>
-              </div>         
-
-            </div>
-
-
-          <div class="grid-item item-five item-padding">
-
-              <a class="image-modal" href="#image-modal2">
-
-                <img src="assets/images/2.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>VueRouter</h6>
-                    <h4>Mythivue Beasts</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal2" class="mfp-hide modal-box">
-                  <img src="assets/images/2.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>Mythivue Beasts</h2>
-                    <p>Use of mythical beasts with vueRouter</p>
-                    <a href="assets/VueRouter/index.html" target="_blank" class="btn btn-danger">View site</a></a>
-                  </div>
-              </div>         
-
-            </div>
-
-            <div class="grid-item item-five">
-
-              <a class="image-modal" href="#image-modal3">
-
-                <img src="assets/images/3.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>Javascript</h6>
-                    <h4>Chinese Zodiac</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal3" class="mfp-hide modal-box">
-                  <img src="assets/images/3.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>Chinese Zodiac</h2>
-                    <p> Advanced Javascript to pull data on Chinese Zodiac Animals	</p>
-                    <a href="assets/Zodiac/index.html" target="_blank" class="btn btn-danger">View site</a></a>
-                  </div>
-              </div>         
-
-            </div>
-
-            <div class="grid-item item-five  item-padding-top">
-
-              <a class="image-modal" href="#image-modal4">
-
-                <img src="assets/images/4.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>API</h6>
-                    <h4>Book Finder</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal4" class="mfp-hide modal-box">
-                  <img src="assets/images/4.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>Book Finder</h2>
-                    <p> Using the Google Books API to search for books</p>
-
-                  </div>
-              </div>         
-
-            </div>
-
-            <div class="grid-item item-five item-padding">
-
-              <a class="image-modal" href="#image-modal5">
-
-                <img src="assets/images/5.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>Javascript</h6>
-                    <h4>Clock</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal5" class="mfp-hide modal-box">
-                  <img src="assets/images/5.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>Clock</h2>
-                    <p>Clock created with Javascript </p>
-                    <a href="assets/clock/index.html" target="_blank" class="btn btn-danger">View site</a></a>
-
-                  </div>
-              </div>         
-
-            </div> 
---> 
- <!--            <div class="grid-item item-five item-padding">
-
-              <a class="image-modal" href="#image-modal6">
-
-                <img src="assets/images/8.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>Fashion</h6>
-                    <h4>Shopping</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal6" class="mfp-hide modal-box">
-                  <img src="assets/images/8.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>Shopping</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
-                  </div>
-              </div>         
-
-            </div> -->
-<!-- 
-            <div class="grid-item item-five item-padding">
-
-              <a class="image-modal" href="#image-modal7">
-
-                <img src="assets/images/7.jpg" alt="">
-
-                  <div class="itemHover">
-                    <h6>Branding</h6>
-                    <h4>Handmade</h4>
-                  </div>
-
-              </a>
-
-              <div id="image-modal7" class="mfp-hide modal-box">
-                  <img src="assets/images/7.jpg" alt="">
-                  <div class="modal-box-content">
-                    <h2>Handmade</h2>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat. </p>
-                  </div>
-              </div>         
-
-            </div>  -->
-
-    </div>
-    </div>
-
-   
-    </section> 
-
-
-
-
-<!-- section Services
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-<!-- 
-        <section id="sectionServices">
-          <div class="sectionTitle">
-            <h1>Services</h1>
-            <h6>What can I do for you</h6>
-          </div>       
-
-          
-          <div class="container">
-             <div class="row servicesRow">
-
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="servicesBox">
-                        <div class="servicesIcon">
-                            <div class="icon icon-basic-lightbulb"></div>
-                        </div>
-                        <div class="servicesContent">
-                        <h4>Ideas</h4>
-                        <h6>Help you start</h6>
-                        <p class="plineheight">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore adipisci excepturi dolorum, quod libero distinctio vitae ea sint labore veritatis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="servicesBox">
-                        <div class="servicesIcon">
-                            <div class="icon icon-basic-notebook-pencil"></div>
-                        </div>
-                        <div class="servicesContent">
-                        <h4>Sketches</h4>
-                        <h6>See different looks</h6>
-                        <p class="plineheight">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore adipisci excepturi dolorum, quod libero distinctio vitae ea sint labore veritatis.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row servicesRow">
-
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="servicesBox">
-                        <div class="servicesIcon">
-                            <div class="icon icon-basic-webpage-img-txt"></div>
-                        </div>
-                        <div class="servicesContent">
-                        <h4>Graphics</h4>
-                        <h6>Get a design</h6>
-                        <p class="plineheight">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore adipisci excepturi dolorum, quod libero distinctio vitae ea sint labore veritatis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="servicesBox">
-                        <div class="servicesIcon">
-                            <div class="icon icon-basic-keyboard"></div>
-                        </div>
-                        <div class="servicesContent">
-                        <h4>Develop</h4>
-                        <h6>Build your project</h6>
-                        <p class="plineheight">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore adipisci excepturi dolorum, quod libero distinctio vitae ea sint labore veritatis.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            
-
-          </div>
-
-        </section>
- -->
-
-
-<!-- section Blog
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!-- 
-        <section id="sectionBlog">
-          <div class="sectionTitle">
-            <h1>Journal</h1>
-            <h6 class="whiteTitle">My latest news</h6>
-          </div>
-
-      <div class="container">
-
-       <div id="blog-grid" class="bGrid">
-
-        <div class="gutter-sizer"></div>
-        
-            <div class="blog-item item-four item-margin">
-            <img src="assets/images/blog1.jpg" alt="">
-            <a href=""><h3>Journal post with image</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt.<br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>
-
-            <div class="blog-item item-four item-margin">
-            <img src="assets/images/blog4.jpg" alt="">
-            <a href=""><h3>Journal post with image</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit.<br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>
-
-            <div class="blog-item item-four">
-            <img src="assets/images/blog5.jpg" alt="">
-            <a href=""><h3>Journal post with image</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eius modi tempora incidunt.<br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>
-
-            <div class="blog-item item-four item-margin blog-padding">
-            <a href=""><h3>Simple journal post</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.<br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>   
-
-            <div class="blog-item item-four item-margin">
-            <img src="assets/images/blog6.jpg" alt="">
-            <a href=""><h3>Journal post with image</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia.<br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>
-
-            <div class="blog-item item-four">
-            <img src="assets/images/blog2.jpg" alt="">
-            <a href=""><h3>Journal post with image</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia. <br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>
-
-            <div class="blog-item item-four item-margin">
-            <img src="assets/images/blog3.jpg" alt="">
-            <a href=""><h3>Journal post with image</h3></a>
-            <p>
-            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia. <br>
-            <b><a href="">Read more</a></b>
-            </p>
-            <h6>Category <span class="separator">|</span> 12 July 2015 <span class="separator">|</span><a href=""> 0 comments</a></h6>
-            </div>
-
-
-        </div>
-              
-
+    <section id="about">
+      <div class="section-grid">
+        <h2>About</h2>
+        <p class="copy">Bay Area–based risk and operations professional with experience spanning financial services, marketplace trust & safety, fraud strategy, and risk analytics. My work has focused on designing scalable operational programs, analytical workflows, and decision-support systems across fintech and platform ecosystems.</p>
       </div>
-        </section>
-		
- -->
+    </section>
 
-<!-- section Contact
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section id="focus">
+      <div class="section-grid">
+        <h2>Focus Areas</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Operational Architecture</h3>
+            <p>Structuring workflows, processes, and systems that help teams move with clarity and control.</p>
+          </article>
+          <article class="card">
+            <h3>Risk & Trust Systems</h3>
+            <p>Building practical operating models for risk, trust, and decisioning environments.</p>
+          </article>
+          <article class="card">
+            <h3>Analytics & Decisioning</h3>
+            <p>Turning operational data into insights, monitoring, and action-oriented recommendations.</p>
+          </article>
+          <article class="card">
+            <h3>AI-Assisted Tooling</h3>
+            <p>Exploring lightweight tools that support analysis, automation, and knowledge workflows.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-        <section id="sectionContact">
-            <div class="sectionTitle LessPaddingTitle">
-              <h1>Contact</h1>
-              <h6>Get in touch</h6>
-            </div>      
-                  
-            <div class="container">
-                 
-                   <div class="contactForm">
+    <section id="experience">
+      <div class="section-grid">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="item">
+            <div class="year">Current</div>
+            <div><strong>Risk Strategy & Insights</strong><span>Fintech infrastructure, risk analytics, operational strategy, and decision-support workflows.</span></div>
+          </div>
+          <div class="item">
+            <div class="year">Platforms</div>
+            <div><strong>Marketplace Trust & Risk</strong><span>Experience across marketplace, payments, trust & safety, and money movement risk environments.</span></div>
+          </div>
+          <div class="item">
+            <div class="year">Foundation</div>
+            <div><strong>Financial Services</strong><span>Banking and client strategy foundation with exposure to fraud detection, financial planning, and relationship operations.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    <!--MESSAGE SENT SUCCESFULLY-->
-                    <div id="message"></div>
+    <section id="contact">
+      <div class="section-grid">
+        <h2>Contact</h2>
+        <p class="copy">For professional context, connect on <a href="https://www.linkedin.com/in/jhueyx/" target="_blank" rel="me noopener">LinkedIn</a> or review public work on <a href="https://github.com/jhueyx" target="_blank" rel="me noopener">GitHub</a>.</p>
+      </div>
+    </section>
+  </main>
 
-                    <!--MAIN FORM-->
+  <footer class="wrap">
+    <div class="footer-row">
+      <span>© <span id="year"></span> Jason Huey</span>
+      <span>No trackers. No analytics. Static by design.</span>
+    </div>
+  </footer>
 
-                    <form method="post" action="assets/contact.php" name="contactform" id="contactform">
-
-                    <fieldset>
-
-                      <div class="col-md-4 col-sm-6 col-xs-12">
-                        <input name="name" type="text" id="name" placeholder="Name* :" size="30" value="" />
-                      </div>
-
-                      <div class="col-md-4 col-sm-6 col-xs-12">
-                        <input name="email" type="text" id="email" placeholder="E-mail* :" size="30" value="" />
-                      </div>
-
-                      <div class="col-md-4 col-sm-12 col-xs-12">
-                        <input name="subject" type="text" id="subject" placeholder="Subject* :" size="30" value="" />
-                      </div>
-
-                      <div class="col-md-12 col-sm-12 col-xs-12">
-                        <textarea name="comments" cols="40" rows="3" placeholder="Message* :" id="comments"></textarea>
-                      </div>
-
-                        <input type="submit" class="submit" id="submit" value="Send message" />
-                       
-
-                    </fieldset>
-
-                    </form>
-                    <!--END Main form-->
-                    </div>
-
-                    </div>
-                    <!-- END contact FORM-->
-            </div>
-                    
-
-                
-        </section>
-
-  <!-- Footer
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-       <footer class="pFooter">
-
-            <div class="container">
-
-                <div class="col-md-4 col-sm-4 col-xs-12 fCopy">
-<!--                 Copyright © <span>DORA</span> 2018
- -->                </div>
-
-                <div class="col-md-4 col-sm-4 col-xs-12 fScroll">
-                    <a class="easing scroll-up" href="#sectionIntro">
-                    BACK TO TOP<span aria-hidden="true" class="arrow_carrot-up"></span>
-                    </a>
-                </div>
-
-           <!--      <div class="col-md-4 col-sm-4 col-xs-12 fIcons">
-                <a href="https://www.linkedin.com/in/jhueyx/">
-                <span aria-hidden="true" class="social_linkedin_circle"></span>
-                </a>
-                <a href="#">
-                <span aria-hidden="true" class="social_twitter_circle"></span>
-                </a>
-                <a href="#">
-                <span aria-hidden="true" class="social_github_circle"></span>
-                </a>
-                <a href="#">
-                <span aria-hidden="true" class="social_instagram_circle"></span>
-                </a>
-                </div> -->
-
-            </div>
-
-        </footer>
-
-<!--  Javascripts
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-      <script src="assets/js/jquery-2.1.1.js"></script>
-      <script src="assets/js/bootstrap.js"></script>
-      <script src="assets/js/modernizr.custom.js"></script>
-      <script src="assets/js/contactform.js"></script>
-      <!-- Navigation menu-->
-      <script src="assets/js/classie.js"></script>
-      <script src="assets/js/nav-active.js"></script>
-      <script src="assets/js/jquery.easing.js"></script>
-      <!--JS for MAGNIFIC POPUP & ALL SCRIPTS& CALLS-->
-      <script src="assets/js/scripts.js"></script>
-      <script src="assets/js/jquery.magnific-popup.min.js"></script>
-      <!--JS for easy scrolling-->
-      <script src="assets/js/smoothscroll.js"></script>     
-      <!-- WOW ANIMATIONS -->
-      <script src="assets/js/wow.min.js"></script>
-      <script src="assets/js/jquery-parallax.js"></script>
-      <!-- Masonry Package -->
-      <script src="assets/js/isotope.pkgd.min.js"></script>
-      <script>
-        new WOW().init();
-      </script>
-
-
-<script>
-$(window).load(function(){
-var $container = $('#masonry-grid');
-  $container.isotope({
-      itemSelector: '.grid-item'
-  });
-});
-</script>
-
-<script>
-$(window).load(function(){
-var $container2 = $('#blog-grid');
-  $container2.isotope({
-      itemSelector: '.blog-item'
-  });
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-  
-  //.parallax(xPosition, speedFactor, outerHeight) options:
-  //xPosition - Horizontal position of the element
-  //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-  //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-$('#sectionIntro').parallax({ "coeff":+0.5 });
-
-})
-</script>
-  </body>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>

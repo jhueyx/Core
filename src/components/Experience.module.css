@@ -1,0 +1,41 @@
+.timeline {
+  display: grid;
+  gap: 0;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 22px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+html.light .item { border-bottom-color: rgba(0, 0, 0, 0.07); }
+
+.item:last-child { border-bottom: none; }
+
+.period {
+  color: var(--soft);
+  font-size: 13px;
+  padding-top: 3px;
+}
+
+.title {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.desc {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+  .item { grid-template-columns: 1fr; gap: 6px; }
+}

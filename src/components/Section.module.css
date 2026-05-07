@@ -1,0 +1,38 @@
+.section {
+  padding: 42px 0;
+  border-top: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.label {
+  margin: 0;
+  font-size: 13px;
+  color: var(--soft);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 650;
+  padding-top: 4px;
+}
+
+.copy {
+  margin: 0;
+  color: #c7cfdb;
+  font-size: 19px;
+  line-height: 1.7;
+  max-width: 780px;
+}
+
+html.light .copy { color: #374455; }
+
+.copy a { color: var(--accent); }
+.copy a:hover { text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .grid { grid-template-columns: 1fr; gap: 18px; }
+}

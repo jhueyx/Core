@@ -1,0 +1,110 @@
+.hero {
+  min-height: 62vh;
+  display: grid;
+  align-items: center;
+  padding: 18px 0 90px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+  border: 1px solid rgba(138, 180, 255, 0.24);
+  background: var(--accent-soft);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+
+.eyebrowDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  flex-shrink: 0;
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(54px, 11vw, 132px);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  max-width: 940px;
+  color: var(--text);
+}
+
+.roleWrap {
+  margin-top: 20px;
+  height: clamp(38px, 5vw, 58px);
+  overflow: hidden;
+}
+
+.role {
+  display: block;
+  font-size: clamp(24px, 4vw, 46px);
+  letter-spacing: -0.05em;
+  color: #dfe6f3;
+  font-weight: 520;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+html.light .role { color: #2c3e55; }
+
+.summary {
+  margin: 24px 0 0;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: clamp(17px, 2vw, 21px);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 11px 18px;
+  border-radius: 13px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+html.light .btn {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html.light .btn:hover {
+  border-color: rgba(0, 0, 0, 0.24);
+}
+
+.btn.primary {
+  background: var(--text);
+  color: #08090c;
+  border-color: var(--text);
+}
+
+html.light .btn.primary {
+  background: var(--text);
+  color: #f4f6fb;
+}
+
+@media (max-width: 760px) {
+  .hero { min-height: auto; padding-bottom: 68px; }
+}

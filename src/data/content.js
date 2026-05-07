@@ -24,10 +24,10 @@ export const projects = [
 ];
 
 export const skills = [
-  { category: 'Languages', items: ['Python', 'SQL', 'R', 'JavaScript'] },
+  { category: 'Languages', items: ['Python', 'SQL', 'Snowflake', 'PostgreSQL', 'R', 'JavaScript'] },
   { category: 'Risk & Analytics', items: ['Credit Risk', 'Fraud Strategy', 'Trust & Safety', 'Decision Systems'] },
-  { category: 'Tools & Infra', items: ['Supabase', 'dbt', 'Tableau', 'GitHub Actions'] },
-  { category: 'Domains', items: ['Fintech', 'Marketplace', 'Financial Services', 'Payments'] },
+  { category: 'Tools & Infra', items: ['Supabase', 'dbt', 'Tableau', 'Looker', 'Vercel', 'Next.js', 'GitHub Actions', 'GitHub', 'Git', 'JIRA'] },
+  { category: 'Domains', items: ['Fintech', 'Marketplace', 'Financial Services', 'Payments', 'Gig Economy'] },
 ];
 
 export const experience = [

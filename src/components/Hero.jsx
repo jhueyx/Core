@@ -25,11 +25,6 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className={styles.eyebrow}>
-          <span className={styles.eyebrowDot} />
-          Risk · Analytics · Systems
-        </div>
-
         <h1 className={styles.name}>Jason Huey</h1>
 
         <div className={styles.roleWrap} aria-live="polite" aria-atomic="true">

@@ -9,7 +9,7 @@ export const projects = [
   {
     id: 'perks-ledger',
     name: 'My Perks Ledger',
-    desc: 'PWA for tracking credit card benefit ROI, redemption streaks, and annual fee breakeven across 13 premium cards.',
+    desc: 'PWA for tracking credit card benefit ROI, redemption streaks, and annual fee breakeven.',
     tags: ['Vanilla JS', 'Supabase', 'PWA'],
     github: 'https://github.com/jhueyx/my-perks-ledger',
     live: 'https://jhueyx.github.io/my-perks-ledger/',

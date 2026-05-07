@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Header.module.css';
 
-export default function Header({ theme, onToggleTheme }) {
+export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const links = [
@@ -16,26 +16,12 @@ export default function Header({ theme, onToggleTheme }) {
     <header className={styles.header}>
       <div className="wrap">
         <nav className={styles.nav} aria-label="Primary navigation">
-          <a className={styles.mark} href="#top" aria-label="Jason Huey home">
-            <span className={styles.dot} aria-hidden="true" />
-            <span>JH</span>
-          </a>
-
           <div className={styles.right}>
             <div className={`${styles.links} hide-mobile`}>
               {links.map(l => (
                 <a key={l.href} href={l.href}>{l.label}</a>
               ))}
             </div>
-
-            <button
-              className={styles.themeBtn}
-              onClick={onToggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-              title="Toggle theme"
-            >
-              {theme === 'dark' ? '☀' : '☽'}
-            </button>
 
             <button
               className={styles.hamburger}

@@ -43,7 +43,7 @@ export const experience = [
   },
   {
     period: 'Foundation',
-    title: 'Financial Services',
-    desc: 'Banking and client strategy foundation with exposure to fraud detection, financial planning, and relationship operations.',
+    title: 'Compliance Operations & Advisory',
+    desc: 'Background in banking operations, client advisory, fraud detection, and financial relationship management workflows.',
   },
 ];

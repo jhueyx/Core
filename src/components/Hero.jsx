@@ -40,15 +40,6 @@ export default function Hero() {
           Designing operational systems, analytical workflows, and modern risk infrastructure.
         </p>
 
-        <div className={styles.actions}>
-          <a className={`${styles.btn} ${styles.primary}`} href="https://www.linkedin.com/in/jhueyx/" rel="me noopener" target="_blank">
-            LinkedIn
-          </a>
-          <a className={styles.btn} href="https://github.com/jhueyx" rel="me noopener" target="_blank">
-            GitHub
-          </a>
-          <a className={styles.btn} href="#contact">Contact</a>
-        </div>
       </motion.div>
     </section>
   );

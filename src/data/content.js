@@ -7,19 +7,33 @@ export const roles = [
 
 export const projects = [
   {
-    id: 'perks-ledger',
-    name: 'My Perks Ledger',
-    desc: 'PWA for tracking credit card benefit ROI, redemption streaks, and annual fee breakeven.',
-    tags: ['Vanilla JS', 'Supabase', 'PWA'],
-    github: 'https://github.com/jhueyx/my-perks-ledger',
-    live: 'https://jhueyx.github.io/my-perks-ledger/',
+    id: 'nexus',
+    name: 'Nexus',
+    desc: 'Personal operations workspace for tasks, boards, notes, and decisions, with an AI assistant that answers from its own records.',
+    tags: ['React', 'Supabase', 'AI'],
+    live: 'https://nexus.hueyventures.org',
   },
   {
-    id: 'stock-scanner',
-    name: 'Stock Scanner',
-    desc: 'Python equity scanner that filters stocks by technical and fundamental criteria with SQL-backed data pipelines.',
-    tags: ['Python', 'SQL', 'Finance'],
-    github: 'https://github.com/jhueyx/stock-scanner',
+    id: 'monitor',
+    name: 'Monitor',
+    desc: 'Options dashboard that scores covered calls, cash-secured puts, and LEAPS, and tracks open positions with live P&L and Greeks.',
+    tags: ['React', 'Schwab API', 'Finance'],
+    live: 'https://monitor.hueyventures.org',
+  },
+  {
+    id: 'perks-ledger',
+    name: 'Perks Ledger',
+    desc: 'PWA for tracking credit card benefit ROI, redemption streaks, and annual fee breakeven.',
+    tags: ['Vanilla JS', 'Supabase', 'PWA'],
+    github: 'https://github.com/jhueyx/Perks-Ledger',
+    live: 'https://perks.hueyventures.org',
+  },
+  {
+    id: 'habits',
+    name: 'Habits',
+    desc: 'Daily habit tracker with streaks, weekly-frequency goals, monthly insights, and history.',
+    tags: ['Vanilla JS', 'Supabase', 'PWA'],
+    live: 'https://habits.hueyventures.org',
   },
 ];
 
